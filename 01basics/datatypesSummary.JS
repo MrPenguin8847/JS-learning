@@ -20,9 +20,6 @@ console.log(id === anotherId);
 const bigNumber = 234567893456789045678945678n  // bigint
 
 
-
-
-
 // Non-primitive (call by reference)
 // Arrays, Objects, Functions
 
@@ -41,3 +38,26 @@ const myfunction = function(){
 }
 
 console.log(typeof scoreValue);
+
+
+/************************************************************ Memory ***********************************************************/ 
+
+// Stack (Primitive), Heap (Non-Primitive)
+
+let myname = "Navy"
+let myAnotherName = myname
+myAnotherName = "pengu"
+
+console.log(myAnotherName);
+
+let userOne = {
+  email: "navy@google.com",
+  pass: "gemini"
+}
+let userTwo = userOne
+userTwo.email = "pnegu@gmail.com"
+
+console.log(userTwo);
+console.log(userOne);
+
+// Stack always gets the copy and Heap changes the actual reference 

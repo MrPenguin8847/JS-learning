@@ -6,7 +6,7 @@ const repocount = 3
 console.log(`Hello my name is ${name} my repocount is ${repocount}`); // always use this syntax
 const gameName = new String('navy-pengu') // another way to assign a string
 console.log(gameName[0]); // prints the char on specific position
-console.log(gameName.__proto__); // 
+console.log(gameName.__proto__); // not used anymore DELETED
 
 console.log(gameName.length); //gives length of string
 console.log(gameName.toUpperCase()); // diplays string in uppercase

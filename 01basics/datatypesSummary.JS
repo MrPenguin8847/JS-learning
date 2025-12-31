@@ -21,13 +21,13 @@ const bigNumber = 234567893456789045678945678n  // bigint
 
 
 // Non-primitive (call by reference)
-// Arrays, Objects, Functions
+// Arrays (Array is a typeof object), Objects, Functions
 
 // Object
 const heros = ["shaktiman", "naagraj", "doga"]
 console.log(typeof heros);
 
-// Arrays
+// Object
 let myobj = {
   name: "pengu",
   age: 22,

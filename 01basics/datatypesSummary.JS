@@ -25,6 +25,7 @@ const bigNumber = 234567893456789045678945678n  // bigint
 
 // Object
 const heros = ["shaktiman", "naagraj", "doga"]
+console.log(typeof heros);
 
 // Arrays
 let myobj = {
@@ -47,7 +48,7 @@ console.log(typeof scoreValue);
 let myname = "Navy"
 let myAnotherName = myname
 myAnotherName = "pengu"
-
+console.log(myname);
 console.log(myAnotherName);
 
 let userOne = {
@@ -59,5 +60,4 @@ userTwo.email = "pnegu@gmail.com"
 
 console.log(userTwo);
 console.log(userOne);
-
 // Stack always gets the copy and Heap changes the actual reference 

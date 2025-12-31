@@ -13,10 +13,10 @@ console.log(typeof myDate);
 let myCreatedDate = new Date("01-14-2025") 
 console.log(myCreatedDate.toLocaleString('en-IN'));
 
-let myTimeStamp = Date.now()
+let myTimeStamp = Date.now() // Returns the number of milliseconds ellapsed since 1 jan 1970 till now
 console.log(myTimeStamp);
-console.log(myCreatedDate.getTime());
-console.log(Math.round(Date.now()/1000));
+console.log(myCreatedDate.getTime()); // Returns the milliseconds from 1 jan 1970 till the date assigned in variable
+console.log(Math.round(Date.now()/1000)); // Converts the milliseconds into seconds and rounds it off
 
 let newDate = new Date()
 console.log(newDate);

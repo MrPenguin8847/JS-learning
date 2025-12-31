@@ -23,7 +23,7 @@ console.log(myArr.indexOf(3));
 const newArr = myArr.join() // Converts an array into string
 console.log(myArr);
 console.log(newArr);
-console.log(typeof newArr);
+console.log(typeof newArr)
 
 // Slice, Splice
 console.log("A", myArr);

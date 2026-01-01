@@ -2,7 +2,6 @@
 
 // Object literals
 
-
 const mySym = Symbol("key1")
 
 const JsUser = {
@@ -24,3 +23,16 @@ console.log(JsUser[mySym]);
 console.log(typeof JsUser[mySym]);
 
 JsUser.email = "Pengu@chatgpt.com"
+// Object.freeze(JsUser)
+JsUser.email = "pengu@microsoft.in"
+console.log(JsUser);
+
+JsUser.greeting = function(){
+  console.log(`Hello JsUser`); 
+}
+JsUser.greetingTwo = function(){
+  console.log(`Hello JsUser, ${this["full name"]}`); 
+}
+console.log(JsUser.greeting());
+console.log(JsUser.greetingTwo());
+

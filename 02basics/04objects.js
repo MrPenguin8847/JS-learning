@@ -57,3 +57,26 @@ console.log(Object.entries(tinderUser));  //Impotant
 
 console.log(tinderUser.hasOwnProperty('isLogged')); // to check if the key exists in the object
 
+/*+++++++++++++++++++++++++++++++++++++++++++++ Object De-structure ++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+const course = {
+  coursename: "JS course",
+  price: 999,
+  courseInstructor: "Hitesh"
+}
+
+const {courseInstructor: instructor} = course // Instead of writing course.courseIntructor again and again we destructure it and can gice it a name to call it 
+console.log(instructor);
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++ JSON API's +++++++++++++++++++++++++++++++++++++++++++++++++++*/
+// {
+//   "name": "Pengu",
+//   "coursename": "JS",
+//   "price": "free"
+// }
+
+[
+  {},
+  {},
+  {}
+]

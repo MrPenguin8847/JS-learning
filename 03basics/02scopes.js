@@ -14,3 +14,44 @@ console.log(a);
 // console.log(b);
 // console.log(c);
 
+//  Nested Scope
+function one(){
+  const username = "Peng"
+  function two(){
+    const website = "youtube"
+    console.log(username);
+  }
+  // console.log(website); // Will give error
+
+  two()
+
+}
+
+one()
+// Conclusion => for every nested scope call stack is different, the main function will not call that nested functions we have to create a call.
+
+if (true) {
+  const username = "pengu"
+  if(username === "pengu"){
+    const website = " youtube"
+    console.log(username + website);
+  }
+  // console.log(website); // block scope can't be accessed outside of block
+}
+
+// console.log(username); // block scope can't be accessed outside of block
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++= Interesting ++++++++++++++++++++++++++++++++++++++++++++
+console.log(addone(5))
+
+function addone(num){
+  return num + 1
+}
+ 
+// addtwo(5) // ERROR
+const addtwo = function(num){
+  return num + 2
+}
+
+// Conclusion => the difference is how we declare a function in 2nd method we can't access the value before the declaration

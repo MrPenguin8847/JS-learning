@@ -1,4 +1,13 @@
-// Singleton =>  If we declare literal toh singleton nahi bnta hai only constructor declare krne par singleton bnn skta hai
+// There are Two different ways to decalre object => 1. like literal 2. like constructor
+// Singleton => means ye apne tarah ka ek hi object hai. 
+
+// Difference between object literal and object constructor:
+/*| Thing              | Object Literal | Object Constructor |
+  | ------------------ | -------------- | ------------------ |
+  | What it is         | One object     | A factory          |
+  | How many objects   | One            | Many               |
+  | Easy for beginners | ✅ Yes         | ❌ Harder         |
+  | Singleton          | ✅ Yes         | ❌ No             | */
 
 // Object literals
 

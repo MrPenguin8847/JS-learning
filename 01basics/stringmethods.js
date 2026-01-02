@@ -6,10 +6,10 @@ console.log(`An index of ${index} returns the character ${sentence.at(index)}`);
 
 index = -4 
 console.log(`An index of ${index} returns the character ${sentence.at(index)}`);
-console.log(`An index of ${index} returns the character ${sentence.at(10)}`);
+console.log(`An index of ${10} returns the character ${sentence.at(10)}`);
 
 // Second - charAt()
-console.log(`The character at index ${index} is ${sentence.charAt(20)}`);
+console.log(`The character at index ${20} is ${sentence.charAt(20)}`);
 
 // Third - charCodeAt()
 console.log(`The code of ${sentence.charAt(12)} is ${sentence.charCodeAt(12)}`);
@@ -151,7 +151,7 @@ const str6 = "Mozilla";
 
 console.log(str6.substring(1, 3));
 
-// TwentyFive - toLocaleLowerCase()
+// TwentyFive - toLocaleLowerCase() => uses the local system
 const dotted = "İstanbul";
 
 console.log(`EN-US: ${dotted.toLocaleLowerCase("en-US")}`);
@@ -159,7 +159,7 @@ console.log(`EN-US: ${dotted.toLocaleLowerCase("en-US")}`);
 // TwentySix - toLocaleUpperCase()
 console.log(dotted.toLocaleUpperCase("en-US"))
 
-// TwentySeven - toLowerCase()
+// TwentySeven - toLowerCase() => Uses the standard system
 console.log(gameName.toLowerCase()); // diplays string in lowercase
 
 // TwentyEigth - toUpperCase

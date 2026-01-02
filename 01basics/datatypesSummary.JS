@@ -1,4 +1,4 @@
-// JS is a dynamically types language 
+// JS is a dynamically typed language meaning we don't need to assign any variables type JS can identify that by itself
 
 // Types of Datatypes
 
@@ -27,7 +27,7 @@ const bigNumber = 234567893456789045678945678n  // bigint
 const heros = ["shaktiman", "naagraj", "doga"]
 console.log(typeof heros);
 
-// Object
+// Array
 let myobj = {
   name: "pengu",
   age: 22,
@@ -37,6 +37,9 @@ let myobj = {
 const myfunction = function(){
   console.log("Hello world");
 }
+function newfuntion (){
+  console.log("Hello Pengu");
+} // better way to assign a function
 
 console.log(typeof scoreValue);
 

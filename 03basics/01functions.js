@@ -28,7 +28,7 @@ function addTwoNumbers (number1, number2) {
   return number1 + number2
 }
 
-const result = addTwoNumbers(3, 5) // Here 3 and null are arguments
+const result = addTwoNumbers(3, 5) // Here 3 and 5 are arguments
 console.log("Results: ", result);
 
 function loginUserMsg (username){

@@ -9,7 +9,7 @@ const dcHeros = ["SuperMan", "flash", "batman"]
 // console.log(allHeros);
 
 
-const allNewHeros = [...marvelHeros, ...dcHeros]
+const allNewHeros = [...marvelHeros, ...dcHeros] // (...) represents spread operator
 console.log(allNewHeros);
 
 const anotherArray = [1, 2, 3, [4, 5, 6], 7, [6, 7, [4, 5]]]

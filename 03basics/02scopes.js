@@ -1,7 +1,7 @@
 // Scope => defines the accessibility or visibility of variables, functions, and objects in a particular part of your code.
 // Basically, {} this is scope
-// var c = 300 // var is just for example we won't use it // Global scope => works throughout the code 
-let a = 300 // Global scope
+// var c = 300 // scope is the reason for not using var anymore cause it doesn't follow the scope rules
+let a = 300 // Global scope => works throughout the code 
 
 // Block scope => the value written in scope that doesn't apply to rest of the code except that block of code 
 if(true){

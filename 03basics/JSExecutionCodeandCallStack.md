@@ -12,11 +12,12 @@ Now this code will run in two phases
 1. Memory creation phase => sirf variables ke liye jagah allocate hoti hai
 2. Execution Phase => Every function gets executed 
 
-` let val1 = 10
+``` let val1 = 10
 let val2 = 5
 function addNum(num1, num2){
   let total = num1 + num2
   return total
 } 
 let result1 = addnum(val1, val2)
-let result2 = addnum(10, 2) `
+let result2 = addnum(10, 2) ```
+

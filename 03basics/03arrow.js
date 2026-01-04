@@ -44,5 +44,5 @@ console.log(addTwo(3,4));
 const addWithImplicit = (num1, num2) => (num1 + num2)
 console.log(addWithImplicit(3, 4))
 
-const toReturnObject = (num1, num2) => ({username: "pengu"})
+const toReturnObject = (num1, num2) => ({username: "pengu"}) // Syntax to return a objext
 console.log(toReturnObject());

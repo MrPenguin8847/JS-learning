@@ -19,3 +19,15 @@ console.log(typeof heros);
 
 const marvelHeros = ["Thor", "IronMan", "SpiderMan"]
 console.log(typeof marvelHeros);
+
+const balance = 1000
+
+if (balance > 500) {
+  console.log("Less than");
+} else if (balance > 750) {
+  console.log("Less than 750");
+} else if (balance > 900) {
+  console.log("less than 900");
+} else {
+  console.log("less than 1200");
+}

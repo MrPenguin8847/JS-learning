@@ -41,7 +41,7 @@ const debitCard = true
 const loggedInFromGoogle = false
 const loggedInFromEmail = true
 
-if (userLoggedIn && debitCard && 2 == 3) { // To check multiple statements if both are true then code gets executed
+if (userLoggedIn && debitCard && 2 == 3) { // To check multiple statements if all are true then code gets executed
   console.log("Allowed to buy courses");
 }
 if (loggedInFromGoogle || loggedInFromEmail) { // To check if either one of them is true

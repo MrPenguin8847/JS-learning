@@ -1,4 +1,5 @@
 // for of
+// Objects in array => [{}, {}, {}] most used type
 
 const arr = [1,2,3,4,5]
 

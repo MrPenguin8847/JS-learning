@@ -24,4 +24,20 @@ for (let index = 0; index < myArray.length; index++) {
   console.log(element);
 }
 
-// 
+// Zaruri nahi hai ki ek baar loop start hogya toh end tkk hi jaye in some conditions loop has to be stopped in between
+// for this two keywords are important - break and continue
+
+for (let index = 1; index <= 20; index++) {
+  if (index == 5) {
+    console.log(`Detected 5`)
+    break
+  }
+  console.log(`${index}`);
+}
+for (let index = 1; index <= 20; index++) {
+  if (index == 5) {
+    console.log(`Detected 5`)
+    continue
+  }
+  console.log(`${index}`);
+}

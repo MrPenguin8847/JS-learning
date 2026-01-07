@@ -17,9 +17,9 @@ let score = 1
 do {
     console.log(`${score}`);
     score++
-} while (score <= 10);
+} while (score < 10);
 
-let score1 = 11 // Value is more than the condition
+score = 11// Value is more than the condition
 
 do {
     console.log(`${score}`);

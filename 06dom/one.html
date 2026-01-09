@@ -1,0 +1,76 @@
+<!-- Refer this video => https://youtu.be/Ab6K57WjWTE?si=veQ3fbBSs4nUhGaF -->
+<!-- DOM => Document object model -->
+<!-- DOM tree diagram -->
+<!-- document access and changing things by their id (getelementbyid) or class with .innerHTML method
+Example document.getElementById('firstHeading').innerHTML = '<h1>Pengu</h1>' -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM learning</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 id="title" class="heading">DOM Learning on chai aur code <span>test text</span></h1>
+        <h2>Lorem, ipsum dolor.</h2>
+        <h3>Lorem ipsum dolor sit.</h3>
+        <h3>Lorem ipsum dolor sit.</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur</p>
+        <input type="password">
+        <ul>
+            <li class="list-item">1</li>
+            <li class="list-item">2</li>
+            <li class="list-item">3</li>
+            <li class="list-item">4</li>
+        </ul>
+    </div>
+</body>
+</html> 
+<!-- Summary of video:
+
+Introduction to DOM Manipulation (0:20-0:57): The video starts by acknowledging the growing interest in JavaScript and DOM manipulation, emphasizing its importance for page manipulation beyond just printing to a black screen(console). It highlights that understanding DOM is crucial, especially for future frameworks like React.
+
+Setting up the HTML Structure (1:12-2:48): The speaker demonstrates how to set up a basic HTML file with a heading, paragraph, and applies some initial styling using CSS to make the page darker for better viewing.
+
+Selecting Elements by ID (getElementById) (3:55-5:00):
+
+The primary method for selecting a single element is document.getElementById().
+It's crucial to pay attention to the camel case (e.g., getElementById).
+Once an element is selected, you can access its properties like id (5:21) and className (5:47).
+
+Accessing and Setting Attributes (getAttribute, setAttribute) (6:30-8:29):
+
+element.getAttribute('attributeName') is used to retrieve the value of an attribute (6:30).
+element.setAttribute('attributeName', 'newValue') is used to change or add an attribute (7:26).
+Important Note: setAttribute will overwrite existing attribute values, so if you want to keep previous values, you need to include them (8:02).
+
+Styling Elements Dynamically (9:04-11:00):
+
+The element.style property allows direct manipulation of CSS properties.
+Examples include setting backgroundColor (9:43), padding (10:22), and borderRadius (10:35).
+
+Retrieving Element Content (textContent, innerText, innerHTML) (11:47-15:13):
+
+textContent (11:50): Returns all text content, including hidden elements (14:05).
+innerText (12:08): Returns only the visible text content (13:56).
+innerHTML (12:01): Returns the HTML content inside the element, including any HTML tags (14:47). This is useful when you need to retrieve or set HTML structures within an element.
+
+Query Selectors (querySelector and querySelectorAll) (16:11-22:18):
+
+document.querySelector() (16:17): Selects the first element that matches the specified CSS selector (17:09). This can be an ID (17:21), class (17:21), tag name (16:33), or any valid CSS selector (18:56).
+document.querySelectorAll() (23:13): Selects all elements that match the specified CSS selector and returns a NodeList (23:27).
+The speaker demonstrates selecting multiple list items and modifying their styles and content using querySelector (20:00-22:18).
+
+Understanding NodeList vs. HTMLCollection (23:22-35:50):
+
+NodeList (23:27): Returned by querySelectorAll(). It is array-like but not a true array. It has a forEach method (27:56), but not map or other array methods (24:39).
+HTMLCollection (30:00): Returned by methods like getElementsByClassName() (30:47). It is also array-like but does not have forEach or other array methods (32:28).
+Converting to Array: Both NodeList and HTMLCollection can be converted into a true array using Array.from() (32:51). This allows you to use all array methods like map, filter, etc. (33:04).
+The video shows practical examples of looping through NodeLists using forEach (28:08) and converting an HTMLCollection to an array to apply styling (33:50-34:52).
+Real-World Example on Wikipedia (35:04-38:14): The speaker demonstrates applying the learned concepts on a Wikipedia page to select and manipulate elements, highlighting how real-world websites might have complex DOM structures. -->

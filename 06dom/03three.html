@@ -16,10 +16,10 @@
     div.setAttribute("title", "generated title")
     div.style.backgroundColor = "green"
     div.style.padding = "12px"
-    // div.innerText = "Pengu"
+    // div.innerText = "Pengu" // 2 step process it brings the reference and edits it 
     const addText = document.createTextNode("Pengu")
     div.appendChild(addText) //2nd method but background usage is different
-
+    
     document.body.appendChild(div)
 </script>
 </html>

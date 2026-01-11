@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM with chai aur code</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("typeScript")
+
+    // On large scale model this is done differently cause of optimisation issue. 
+    // always use this method
+    function addOptiLang(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(`${langName}`))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLang('golang')
+
+    // Edit
+    const secondLang = document.querySelector('li:nth-child(2)')
+    console.log(secondLang);
+    // secondLang.innerHTML = 'mojo' // won't use this method for replacing
+    const newLi = document.createElement('li')
+    newLi.textContent = 'mojo'
+    secondLang.replaceWith(newLi)
+
+    // Edit
+    const firstlang = document.querySelector('li:first-child')
+    // const replaceJS = document.createElement('li')
+    // replaceJS.textContent = 'TypeScript'
+    // firstlang.replaceWith(replaceJS) 
+    // another method 
+    firstlang.outerHTML = '<li>Java</li>'
+
+    // Remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+</html>

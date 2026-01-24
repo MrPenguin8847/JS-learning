@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html events</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    // document.querySelector('#owl').onclick = function () {
+    //     alert('Owl clicked')
+    // } Assigning event handlers directly to DOM elements (e.g., document.getElementById('owl').onclick = function() {}) is an improvement but lacks advanced features like event propagation control
+    // attachEvent() - Old method
+    // jQuery - framework in old times like react.js 
+
+    // What to study in events (basics):
+    // Type, timestamp, defaultPrevented,
+    // target, toElement, srcElement, currentTarget, 
+    // clietX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftKey, keyCode
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log(`Clicked inside the ul`);
+    // }, false) // There is third parameter which is true and false but by default its false so we don't write it 
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log(`Owl clicked`);
+    //     e.stopPropagation() // Event bubble hokr upar nahi jayega
+    // }, false ) 
+    
+    // document.getElementById('google').addEventListener('click', (e) => {
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log('Google clicked');
+    // }, false)
+
+    document.querySelector('#images').addEventListener('click', function (e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+        // removeIt.parentNode.removeChild(removeIt) // removeIt was on li and we went a step furthur to ul by using parentNOde again and removed the child which is ul
+
+    }, false)
+</script>
+</html>
+</body>
+</html>
+<!--
+╔════════════════════════════════════════════════════════════════════════════╗
+║              JAVASCRIPT EVENTS - COMPREHENSIVE NOTES                       ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+Overview:
+  In-depth look at JavaScript events, their importance, handling approaches,
+  event bubbling, and event capturing concepts essential for robust apps and
+  technical interviews.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. INTRODUCTION TO JAVASCRIPT EVENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  • Events are triggered by user activities: mouse movements, keyboard presses,
+    drag-and-drop actions (NOT sequential execution)
+  • Continuation of JavaScript journey after DOM manipulation
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+2. THREE APPROACHES TO HANDLING EVENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ A) Direct HTML Injection (onclick attribute)                            │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │ Syntax:  <element onclick="handler()">                                  │
+  │ Status:  ❌ NOT RECOMMENDED                                             │
+  │ Issue:   Not scalable for larger applications                           │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ B) Using element.onclick in JavaScript                                  │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │ Syntax:  element.onclick = function() {}                                │
+  │ Status:  ⚠️  BETTER but LIMITED                                         │
+  │ Issue:   Lacks advanced features like event propagation control         │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ C) Using addEventListener (RECOMMENDED) ✅                             │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │ Syntax:  element.addEventListener('click', function(e){}, false)        │
+  │ Status:  ✅ MOST POWERFUL & RECOMMENDED                                │
+  │ Features:                                                               │
+  │   • Listen for various event types (mouse, keyboard, drag-drop)         │
+  │   • Detailed event objects                                              │
+  │   • Control event propagation (bubbling/capturing)                      │
+  │   • Third parameter crucial for interviews                              │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+3. UNDERSTANDING THE EVENT OBJECT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  KEY EVENT PROPERTIES TO STUDY:
+
+  Event Information:
+    • type           → Event type (e.g., 'click', 'mouseover')
+    • timestamp      → When the event occurred
+    • preventDefault → Prevent default action (e.g., stop link navigation)
+
+  Element References:
+    • target        → Element that triggered the event
+    • srcElement    → Legacy property for target element
+    • currentTarget → Element to which event handler is attached
+
+  Mouse Coordinates:
+    • clientX, clientY   → Coordinates relative to viewport
+    • screenX, screenY   → Coordinates relative to screen
+
+  Keyboard State:
+    • altKey    → Boolean: Alt key pressed?
+    • ctrlKey   → Boolean: Ctrl key pressed?
+    • shiftKey  → Boolean: Shift key pressed?
+    • keyCode   → Numeric code of pressed key
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+4. EVENT PROPAGATION: BUBBLING vs. CAPTURING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Event Propagation = Order in which listeners are triggered on nested elements
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ EVENT BUBBLING (Default Behavior)                                       │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │ Direction:      Innermost → Outer (UP)                                  │
+  │ Third Parameter: false (default)                                        │
+  │ Example:        Click image → triggers image handler, then ul handler   │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ EVENT CAPTURING (Less Common)                                           │
+  ├─────────────────────────────────────────────────────────────────────────┤
+  │ Direction:      Outer → Innermost (DOWN)                                │
+  │ Third Parameter: true                                                   │
+  │ Use Case:       Intercept events before reaching target                 │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+  CONTROL PROPAGATION:
+    • stopPropagation() → Prevent event from bubbling/capturing to parents
+    • Useful for controlling specific element interactions
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+5. PRACTICAL METHODS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  preventDefault():
+    • Stops browser's default action for an event
+    • Example: Prevent link from navigating on click
+    • Syntax:  e.preventDefault()
+
+  stopPropagation():
+    • Prevent event from propagating to parent elements
+    • Example: Stop click from bubbling to parent container
+    • Syntax:  e.stopPropagation()
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+6. PROJECT EXAMPLE: REMOVING IMAGES ON CLICK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  GOAL:    Remove an image when clicked
+
+  CHALLENGE:  Directly removing image leaves bullet point
+
+  SOLUTION:
+    ✓ Attach event listener to parent <ul id="images">
+    ✓ Use event.target to identify clicked element
+    ✓ Check if target is IMG: e.target.tagName === 'IMG'
+    ✓ Access parent <li>: e.target.parentNode
+    ✓ Remove: e.target.parentNode.remove()
+
+    Alternative using removeChild():
+      e.target.parentNode.parentNode.removeChild(e.target.parentNode)
+
+  REFINEMENT:  Only image clicks trigger removal (prevents accidental deletions)
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                         KEY TAKEAWAY                                       ║
+║         addEventListener() is the modern, recommended approach             ║
+║        Always understand event bubbling vs. capturing concepts             ║
+╚════════════════════════════════════════════════════════════════════════════╝
+-->
